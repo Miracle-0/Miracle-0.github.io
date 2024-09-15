@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片标记示例</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            position: relative;
+            display: inline-block;
+            max-width: 100%;
+        }
+
+        /* 图片样式，适应屏幕宽度 */
+        .image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 标记点的样式 */
+        .marker {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 12px;
+        }
+
+        /* 弹出框的样式 */
+        .tooltip {
+            position: absolute;
+            background-color: #333;
+            color: #fff;
+            padding: 5px;
+            border-radius: 4px;
+            top: -35px;
+            left: -20px;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            width: 60px; /* 设置固定宽度 */
+            /* 或者使用 max-width 设置最大宽度 */
+            /* max-width: 200px; */
+        }
+
+        .marker:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 图片，更换为china.jpg -->
+    <img src="china.jpg" alt="中国地图" class="image">
+
+    <!-- 标记点1 -->
+    <div class="marker" style="top: 41%; left: 30%;" data-tooltip="这是标记点1">
+        1
+        <div class="tooltip">西域都护府</div>
+    </div>
+
+    <!-- 标记点2 -->
+    <div class="marker" style="top: 44%; left: 67%;" data-tooltip="这是标记点2">
+        2
+        <div class="tooltip">北京</div>
+    </div>
+
+    <!-- 标记点3 -->
+    <div class="marker" style="top: 59%; left: 59%;" data-tooltip="这是标记点3">
+        3
+        <div class="tooltip">长安</div>
+    </div>
+</div>
+
+</body>
+</html>
